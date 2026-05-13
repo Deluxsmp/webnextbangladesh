@@ -85,7 +85,7 @@
         </div>
     </section>
 
-    <!-- About Section: Team Philosophy (Only content you provided) -->
+    <!-- About Section: Team Philosophy (Now in English) -->
     <section id="about" class="py-32 px-6 bg-slate-900/40 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
         <div class="max-w-6xl mx-auto relative z-10">
@@ -95,13 +95,13 @@
                         Our Identity
                     </div>
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight italic">
-                        🔥 AI না, Real <br><span class="text-blue-500 text-glow">Creative Team Work!</span> 🎨💻
+                        🔥 Not AI, It's Real <br><span class="text-blue-500 text-glow">Creative Teamwork!</span> 🎨💻
                     </h2>
                     <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                        আজকাল অনেকেই AI দিয়ে সাধারণ ডিজাইন তৈরি করেন, কিন্তু একটি <strong class="text-white">প্রফেশনাল ডিজাইন</strong> এবং AI জেনারেটেড ডিজাইনের মধ্যে পার্থক্য অনেক। 😌 আমরা শুধু ডিজাইন করি না — আমরা আপনার ব্র্যান্ডের জন্য একটি <strong class="text-blue-400 italic">Unique Identity</strong> তৈরি করি। ✨
+                        Nowadays, many people create basic designs using AI, but there is a huge difference between a <strong class="text-white">professional design</strong> and an AI-generated one. 😌 We don’t just design—we build a <strong class="text-blue-400 italic">Unique Identity</strong> for your brand. ✨
                     </p>
                     <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                        আমাদের টিম প্রতিটি প্রজেক্টে একসাথে কাজ করে। তাই প্রতিটি লোগো, পোস্টার, ব্যানার বা ওয়েবসাইট হয় Clean, Creative এবং Professional। 💯
+                        Our team collaborates on every project, ensuring that every logo, poster, banner, or website is <strong class="text-white">Clean, Creative, and Professional.</strong> 💯
                     </p>
                     <blockquote class="border-l-4 border-blue-600 pl-6 italic text-xl text-slate-300 mb-8 bg-blue-600/5 py-4 rounded-r-xl">
                         “A good design is not just beautiful, it increases your brand value.” 🚀
@@ -135,7 +135,33 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- NEW: Live Firebase Gallery Section -->
+    <section class="py-20 bg-slate-950 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-4xl font-bold mb-4 italic text-glow text-blue-500">Live Project Showcase</h2>
+                <p class="text-slate-500 uppercase tracking-widest text-xs">Directly Uploaded by Team</p>
+            </div>
+            
+            <!-- Grid where uploaded images will appear -->
+            <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Images will load here -->
+            </div>
+
+            <!-- Admin Upload Panel -->
+            <div class="mt-32 p-10 glass rounded-[2rem] border border-blue-500/20 max-w-xl mx-auto reveal">
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fas fa-lock text-blue-500"></i> Admin Upload</h3>
+                <div class="space-y-4">
+                    <input type="file" id="imageInput" class="block w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition cursor-pointer">
+                    <input type="text" id="projectTitle" placeholder="Project Title" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-blue-500 transition">
+                    <button onclick="uploadWork()" id="uploadBtn" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">Upload to Website</button>
+                    <p id="uploadStatus" class="text-center text-sm text-blue-400"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section (Static Items) -->
     <section id="portfolio" class="py-32 bg-slate-950 px-6">
         <div class="max-w-5xl mx-auto space-y-24">
             <div class="mb-20 text-left reveal">
@@ -154,20 +180,6 @@
                     <h3 class="text-3xl font-bold mb-4">Minecraft Community Hub</h3>
                     <p class="text-slate-400 mb-6 leading-relaxed">Integrated with live player stats, secure store systems, and a professional landing page to boost player retention.</p>
                     <a href="https://www.facebook.com/share/1bUxxRk3Ra/" target="_blank" class="text-blue-500 font-bold border-b border-blue-500 pb-1">Discuss Project →</a>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="reveal flex flex-col md:flex-row-reverse gap-12 items-center group">
-                <div class="w-full md:w-1/2 aspect-video rounded-[2rem] border border-green-500/20 bg-green-900/10 flex flex-col items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-green-500/5"></div>
-                    <i class="fas fa-chart-line text-6xl text-green-500 mb-4 animate-pulse"></i>
-                    <span class="text-green-500 font-bold tracking-widest text-sm uppercase">Business Suite</span>
-                </div>
-                <div class="w-full md:w-1/2">
-                    <h3 class="text-3xl font-bold mb-4">Modern Business Site</h3>
-                    <p class="text-slate-400 mb-6 leading-relaxed">A high-converting landing page for international firms, optimized for speed and maximum lead generation.</p>
-                    <a href="https://www.facebook.com/share/1bUxxRk3Ra/" target="_blank" class="text-green-500 font-bold border-b border-green-500 pb-1">Discuss Project →</a>
                 </div>
             </div>
         </div>
@@ -190,7 +202,79 @@
         <div class="text-xs font-bold text-slate-700 uppercase tracking-[0.3em]">© 2026 WebNext BD · Worldwide</div>
     </footer>
 
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
+
     <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB_rLGe1HmWJ6VzBa_TzPBFeGRASHzz-I4",
+            authDomain: "webnext-portfolio.firebaseapp.com",
+            projectId: "webnext-portfolio",
+            storageBucket: "webnext-portfolio.firebasestorage.app",
+            messagingSenderId: "433062069747",
+            appId: "1:433062069747:web:db6993d3412cb22963be86"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
+        const db = firebase.firestore();
+
+        // Upload Function
+        async function uploadWork() {
+            const file = document.getElementById('imageInput').files[0];
+            const title = document.getElementById('projectTitle').value;
+            const status = document.getElementById('uploadStatus');
+            const btn = document.getElementById('uploadBtn');
+
+            if(!file || !title) return alert("Please select image and title!");
+
+            btn.disabled = true;
+            status.innerText = "Uploading to Cloud...";
+
+            try {
+                const storageRef = storage.ref('works/' + Date.now() + "_" + file.name);
+                await storageRef.put(file);
+                const url = await storageRef.getDownloadURL();
+
+                await db.collection('portfolio_works').add({
+                    title: title,
+                    imageUrl: url,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                status.innerText = "Success! Image is now Live.";
+                document.getElementById('projectTitle').value = "";
+                btn.disabled = false;
+            } catch (e) {
+                console.error(e);
+                status.innerText = "Error! Check Firebase Rules.";
+                btn.disabled = false;
+            }
+        }
+
+        // Live Gallery Fetch
+        db.collection('portfolio_works').orderBy('timestamp', 'desc').onSnapshot(snap => {
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = "";
+            snap.forEach(doc => {
+                const data = doc.data();
+                grid.innerHTML += `
+                    <div class="glass rounded-3xl overflow-hidden border border-white/10 group reveal">
+                        <div class="aspect-video overflow-hidden">
+                            <img src="${data.imageUrl}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-white">${data.title}</h3>
+                        </div>
+                    </div>
+                `;
+            });
+        });
+
         ScrollReveal().reveal('.reveal', {
             distance: '60px',
             duration: 1200,
@@ -200,4 +284,4 @@
         });
     </script>
 </body>
-    </html>
+                        </html>
