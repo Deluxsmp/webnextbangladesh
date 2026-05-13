@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebNext Bangladesh | Professional Web Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap');
+        body { font-family: 'Hind Siliguri', sans-serif; scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <nav class="p-5 flex justify-between items-center bg-gray-800/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <h1 class="text-2xl font-bold text-blue-400">WebNext <span class="text-white">BD</span></h1>
+        <ul class="hidden md:flex space-x-6 text-base">
+            <li><a href="#home" class="hover:text-blue-400 transition">হোম</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition">সার্ভিস</a></li>
+            <li><a href="#portfolio" class="hover:text-blue-400 transition">পোর্টফোলিও</a></li>
+            <li><a href="#contact" class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-700 transition">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 gradient-bg">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-6">আপনার প্রজেক্টকে দিন <span class="text-blue-500 italic">Premium</span> লুক</h2>
+        <p class="text-gray-300 text-lg md:text-xl max-w-3xl leading-relaxed">
+            আমরা <strong>Dhrubo Pal</strong> এবং <strong>Ihsan Leon</strong>—আপনার Minecraft সার্ভার বা যেকোনো ব্যবসার জন্য প্রফেশনাল ওয়েবসাইট তৈরি করতে কাজ করছি।
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <a href="#portfolio" class="bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-full font-bold transition shadow-lg shadow-blue-900/20">আমাদের কাজগুলো</a>
+            <a href="https://www.facebook.com/share/1bUxxRk3Ra/" target="_blank" class="border border-blue-600 hover:bg-blue-600 px-10 py-4 rounded-full font-bold transition">ফেসবুক পেজ</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-24 bg-gray-800 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-16">আমরা যা প্রদান করি</h3>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 bg-gray-900 border border-gray-700 rounded-2xl hover:border-blue-500 transition duration-300">
+                    <i class="fas fa-gamepad text-4xl text-blue-500 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Minecraft Web</h4>
+                    <p class="text-gray-400">সার্ভার স্ট্যাটাস, প্লেয়ার কাউন্ট এবং কাস্টম ডিজাইনসহ প্রিমিয়াম ওয়েবসাইট।</p>
+                </div>
+                <div class="p-8 bg-gray-900 border border-gray-700 rounded-2xl hover:border-green-500 transition duration-300">
+                    <i class="fas fa-rocket text-4xl text-green-500 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">SEO & Speed</h4>
+                    <p class="text-gray-400">গুগল সার্চে সবার উপরে থাকার নিশ্চয়তা এবং সুপার ফাস্ট লোডিং স্পিড।</p>
+                </div>
+                <div class="p-8 bg-gray-900 border border-gray-700 rounded-2xl hover:border-purple-500 transition duration-300">
+                    <i class="fas fa-layer-group text-4xl text-purple-500 mb-6"></i>
+                    <h4 class="text-xl font-bold mb-3">Custom Development</h4>
+                    <p class="text-gray-400">আপনার প্রয়োজন অনুযায়ী যেকোনো ধরণের আধুনিক ওয়েবসাইট ডেভেলপমেন্ট।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Area -->
+    <section id="portfolio" class="py-24 px-6">
+        <h3 class="text-3xl font-bold text-center mb-16">আমাদের সাম্প্রতিক প্রজেক্ট</h3>
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gray-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-gray-700">
+                <div class="md:w-1/2 h-72 bg-blue-900 flex items-center justify-center">
+                    <i class="fas fa-laptop-code text-7xl opacity-20"></i>
+                    <!-- এখানে ভবিষ্যতে আপনার সার্ভারের স্ক্রিনশট দিতে পারেন -->
+                </div>
+                <div class="p-10 md:w-1/2 flex flex-col justify-center">
+                    <span class="text-blue-500 font-bold uppercase text-xs tracking-widest">Successful Project</span>
+                    <h4 class="text-3xl font-bold mt-3">Minecraft Server Web</h4>
+                    <p class="text-gray-400 mt-5 leading-relaxed">আমরা ইতিমধ্যে প্রফেশনাল গেমিং সার্ভারের জন্য ওয়েবসাইট তৈরি করেছি যা বর্তমানে সফলভাবে চলছে।</p>
+                    <a href="https://www.facebook.com/share/1bUxxRk3Ra/" target="_blank" class="mt-8 text-blue-400 font-bold hover:text-blue-300">বিস্তারিত দেখুন →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-900 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h3 class="text-4xl font-bold mb-6">আপনার ওয়েবসাইট নিয়ে কথা বলুন</h3>
+            <p class="text-gray-400 mb-12 text-lg">আমরা আপনার আইডিয়াকে বাস্তবে রূপ দিতে প্রস্তুত। নিচের মাধ্যমে আমাদের সাথে যোগাযোগ করুন।</p>
+            
+            <div class="flex flex-wrap justify-center gap-10">
+                <a href="mailto:webnextbangladesh@gmail.com" class="group">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-600 transition mx-auto">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <span class="text-sm text-gray-400">ইমেইল পাঠান</span>
+                </a>
+                <a href="https://www.facebook.com/share/1bUxxRk3Ra/" target="_blank" class="group">
+                    <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mb-3 group-hover:bg-blue-600 transition mx-auto">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </div>
+                    <span class="text-sm text-gray-400">ফেসবুক পেজ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-gray-500 border-t border-gray-800 bg-gray-900">
+        <p class="mb-2">© 2026 <strong>WebNext Bangladesh</strong>. All Rights Reserved.</p>
+        <p class="text-xs">Developed by Dhrubo Pal & Ihsan Leon</p>
+    </footer>
+
+</body>
+                      </html>
