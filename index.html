@@ -8,16 +8,31 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #0b0e14; color: #c9d1d9; }
 
-        /* ল্যান্ডিং পেজ */
+        /* ল্যান্ডিং পেজ স্টাইল - ছবির সাথে সামঞ্জস্যপূর্ণ */
         #landing-page {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 70% 30%, #1e1e3f 0%, #050508 70%);
-            display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-            padding: 50px; z-index: 1000;
+            background: radial-gradient(circle at 50% 50%, #1a1a35 0%, #0b0e14 70%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 20px; z-index: 1000;
         }
-        .badge { background: #1a202c; color: #6366f1; padding: 4px 10px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #312e81; font-size: 0.8rem; }
+        .badge { 
+            background: #1a202c; color: #818cf8; padding: 5px 12px; border-radius: 20px; 
+            margin-bottom: 20px; border: 1px solid #312e81; font-size: 0.75rem; 
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .status-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; }
         
-        /* মেইন কন্টেন্ট স্টাইল */
+        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+        .highlight { color: #facc15; } /* হলুদ রঙ */
+        
+        p { color: #94a3b8; max-width: 500px; margin-bottom: 30px; font-size: 1rem; }
+
+        .btn-group { display: flex; gap: 15px; }
+        .btn { padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-primary { background: #6366f1; color: white; }
+        .btn-secondary { background: #1e293b; color: white; }
+
+        /* মেইন কন্টেন্ট */
         #main-content { display: none; padding: 20px; max-width: 1200px; margin: 0 auto; }
         header { background: #161b22; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
         .overall-table { width: 100%; background: #161b22; border-radius: 8px; border-collapse: collapse; }
@@ -250,9 +265,14 @@
 
 <!-- ল্যান্ডিং পেজ -->
 <div id="landing-page">
-    <div class="badge">● Season 1 Active ● LIVE</div>
-    <h1 style="font-size: 3rem; margin-bottom: 20px;">The #1 Cracked<br>& Premium Tierlist</h1>
-    <button onclick="showWebsite()" style="padding: 12px 25px; background: #6366f1; border: none; color: white; border-radius: 6px; cursor: pointer; font-weight: bold;">⚡ View Tier List</button>
+    <div class="badge"><div class="status-dot"></div> Season 1 Active ● LIVE</div>
+    <h1>The <span class="highlight">#1 Cracked</span><br>& Premium Tierlist</h1>
+    <p>Vortex Tier is the best Minecraft PvP tier testing server with skilled testers, active leaderboards, fair rankings, and competitive gameplay.</p>
+    
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="showWebsite()">⚡ View Tier List</button>
+        <button class="btn btn-secondary">Join Discord</button>
+    </div>
 </div>
 
 <!-- মেইন ওয়েবসাইট -->
