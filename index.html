@@ -5,35 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex Tier</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #0b0e14; color: #fff; }
-
-        nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px 5%; 
-    background: #161b22; 
-    position: absolute; /* এটি যোগ করুন */
-    top: 0; 
-    width: 100%; 
-    z-index: 2000; /* মেনু যেন সবকিছুর উপরে থাকে */
+        :root {
+            --primary: #6366f1;
+            --bg-dark: #0b0e14;
+            --card-bg: #161b22;
+            --text-main: #f0f6fc;
+            --text-dim: #8b949e;
+            --accent: #facc15;
         }
-        nav a { color: #fff; text-decoration: none; margin-left: 20px; cursor: pointer; }
+          * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
 
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+         /* Nav */
+        nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 8%; background: rgba(22, 27, 34, 0.8); 
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 2000;
+        }
+        nav a { color: #fff; text-decoration: none; margin-left: 25px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--primary); }
+        
         /* কন্টেন্ট */
         .container { padding: 40px 5%; }
         .table-wrapper { background: #161b22; border-radius: 8px; overflow: hidden; }
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 15px; text-align: left; border-bottom: 1px solid #21262d; }
   
-
-        /* ল্যান্ডিং পেজ স্টাইল - ছবির সাথে সামঞ্জস্যপূর্ণ */
+  /* Landing Page Animation */
         #landing-page {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 5% 5%, #1a1a35 0%, #0b0e14 70%);
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 20px; z-index: 1000;
+            height: 100vh; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center;
+            background: radial-gradient(circle at center, #1e1e3f 0%, #0b0e14 70%);
+            animation: fadeIn 1s ease;
         }
         .badge { 
             background: #1a202c; color: #818cf8; padding: 5px 12px; border-radius: 20px; 
@@ -48,16 +54,19 @@
         p { color: #94a3b8; max-width: 500px; margin-bottom: 30px; font-size: 1rem; }
 
         .btn-group { display: flex; gap: 15px; }
-        .btn { padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .btn-primary { background: #6366f1; color: white; }
+          .btn { padding: 14px 30px; border-radius: 10px; cursor: pointer; font-weight: 600; border: none; transition: 0.4s; }
+        .btn-primary { background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6); }
         .btn-secondary { background: #1e293b; color: white; }
 
         /* মেইন কন্টেন্ট */
-        #main-content { display: none; padding: 20px; max-width: 1200px; margin: 0 auto; }
-        header { background: #161b22; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .overall-table { width: 100%; background: #161b22; border-radius: 8px; border-collapse: collapse; }
-        .overall-table th, .overall-table td { padding: 12px; border-bottom: 1px solid #21262d; text-align: left; }
-        /* নতুন প্লেয়ার স্টাইল */
+         /* Table Design */
+        #main-content { display: none; padding: 50px 5%; animation: slideUp 0.6s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+   header { background: #161b22; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+        . .overall-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+        .overall-table th { color: var(--text-dim); padding: 15px; text-transform: uppercase; font-size: 0.8rem; }
+  /* নতুন প্লেয়ার স্টাইল */
 .player-container { display: flex; align-items: center; gap: 12px; }
 .player-skin { width: 45px; height: 45px; border-radius: 6px; object-fit: cover; border: 2px solid #30363d; }
 .player-details { display: flex; flex-direction: column; }
@@ -95,12 +104,10 @@
 }
 
  
-/* প্লেয়ার এবং রিজিয়ন ব্যাজকে পাশাপাশি রাখার জন্য */
-.player-row-item .player-container { 
-    display: flex; 
-    align-items: center; 
-    gap: 12px; 
-}
+/*.player-row-item { background: var(--card-bg); transition: 0.3s; border-radius: 10px; }
+        .player-row-item:hover { background: #1c232d; transform: scale(1.01); }
+        td { padding: 20px; border: none; }
+
 
 /* রিজিয়ন ব্যাজের স্টাইল */
 .region-badge { 
@@ -262,6 +269,7 @@
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+    { from { opacity: 0; } to { opacity: 1; } }
 }
 
 .page-section.active {
