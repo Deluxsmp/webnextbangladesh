@@ -6,7 +6,21 @@
     <title>Vortex Tier</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #0b0e14; color: #c9d1d9; }
+        body { background-color: #0b0e14; color: #fff; }
+
+        /* মেনুবার */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #161b22; }
+        .logo { font-weight: bold; font-size: 1.2rem; }
+        .menu a { color: #8b949e; text-decoration: none; margin-left: 20px; transition: 0.3s; }
+        .menu a:hover { color: #fff; }
+        .discord-btn { background: #5865F2; padding: 8px 15px; border-radius: 6px; }
+
+        /* কন্টেন্ট */
+        .container { padding: 40px 5%; }
+        .table-wrapper { background: #161b22; border-radius: 8px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #21262d; }
+  
 
         /* ল্যান্ডিং পেজ স্টাইল - ছবির সাথে সামঞ্জস্যপূর্ণ */
         #landing-page {
@@ -262,6 +276,14 @@
     </style>
 </head>
 <body>
+    <nav>
+    <div class="logo">Vortex Tier</div>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Ranking</a>
+        <a href="#" class="discord-btn">Discord</a>
+    </div>
+    </nav>
 
 <!-- ল্যান্ডিং পেজ -->
 <div id="landing-page">
