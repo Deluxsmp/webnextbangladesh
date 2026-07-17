@@ -5,51 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex Tier</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-        body { background-color: #0b0e14; color: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #050508; color: #ffffff; min-height: 100vh; }
 
         /* ল্যান্ডিং পেজ স্টাইল */
         #landing-page {
-            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(11, 14, 20, 0.9), rgba(11, 14, 20, 0.9)), url('https://i0.wp.com/highschool.latimes.com/wp-content/uploads/2021/07/minecraft.jpeg?fit=1920%2C1080&ssl=1');
-            background-size: cover;
+            align-items: flex-start;
+            padding: 50px;
+            height: 100vh;
+            background: radial-gradient(circle at 70% 30%, #1e1e3f 0%, #050508 70%);
         }
-        #landing-page h1 { font-size: 3.5rem; color: #f08a24; margin-bottom: 10px; }
-        #landing-page p { font-size: 1.2rem; color: #8b949e; margin-bottom: 20px; }
-        .view-btn { padding: 12px 30px; background: #f08a24; border: none; color: white; font-weight: bold; cursor: pointer; border-radius: 6px; }
+        .badge { background: #1a202c; color: #6366f1; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 20px; border: 1px solid #312e81; }
+        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+        .highlight { color: #f59e0b; }
+        p { color: #94a3b8; max-width: 500px; margin-bottom: 30px; }
+        .btn-group { display: flex; gap: 15px; }
+        .btn-tier { background: #6366f1; color: white; padding: 12px 25px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
+        .btn-discord { background: #1f2937; color: white; padding: 12px 25px; border-radius: 8px; border: none; cursor: pointer; }
 
-        /* মূল ওয়েবসাইট লুকানো */
+        /* মেইন কন্টেন্ট */
         #main-content { display: none; padding: 20px; }
-
-        /* হেডার স্টাইল */
-        header { display: flex; justify-content: space-between; align-items: center; background: #161b22; padding: 15px 25px; border-radius: 8px; margin-bottom: 20px; }
-        .discord-btn { background: #5865F2; color: white; padding: 8px 15px; border-radius: 6px; text-decoration: none; font-size: 0.9rem; }
+        nav { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; border-bottom: 1px solid #1f2937; }
+        .nav-links { display: flex; gap: 20px; color: #94a3b8; }
     </style>
 </head>
 <body>
 
 <!-- ল্যান্ডিং পেজ -->
 <div id="landing-page">
-    <h1>Vortex Tier</h1>
-    <p>The #1 Cracked & Premium Tierlist</p>
-    <button class="view-btn" onclick="showWebsite()">⚡ View Tier List</button>
+    <div class="badge">● Season 1 Active ● LIVE</div>
+    <h1>The <span class="highlight">#1 Cracked</span><br>& Premium Tierlist</h1>
+    <p>Vortex Tier is the best Minecraft PvP tier testing server with skilled testers, active leaderboards, fair rankings, and competitive gameplay.</p>
+    <div class="btn-group">
+        <button class="btn-tier" onclick="showWebsite()">⚡ View Tier List</button>
+        <button class="btn-discord" onclick="window.open('https://discord.gg/CNnWfV99m8')">Join Discord</button>
+    </div>
 </div>
 
 <!-- মূল ওয়েবসাইট কন্টেন্ট -->
 <div id="main-content">
-    <header>
-        <h2>Vortex Tier</h2>
-        <a href="https://discord.gg/CNnWfV99m8" class="discord-btn">Join Discord</a>
-    </header>
-    
-    <!-- আপনার টেবিল এবং অন্যান্য কন্টেন্ট এখানে রাখুন -->
-    <div style="color: #c9d1d9;">
-        এখানে আপনার টিয়ার লিস্টের টেবিল থাকবে।
+    <nav>
+        <h3>Vortex Tier</h3>
+        <div class="nav-links">
+            <span>Home</span>
+            <span>Ranking</span>
+            <span>Discord</span>
+        </div>
+        <button class="btn-tier" style="padding: 5px 15px;">Discord</button>
+    </nav>
+    <div style="padding: 50px;">
+        <!-- এখানে আপনার আগের টেবিল কোডটি বসিয়ে দিন -->
     </div>
 </div>
 
