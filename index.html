@@ -8,12 +8,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #0b0e14; color: #fff; }
 
-        /* মেনুবার */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #161b22; }
-        .logo { font-weight: bold; font-size: 1.2rem; }
-        .menu a { color: #8b949e; text-decoration: none; margin-left: 20px; transition: 0.3s; }
-        .menu a:hover { color: #fff; }
-        .discord-btn { background: #5865F2; padding: 8px 15px; border-radius: 6px; }
+        nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 5%; 
+    background: #161b22; 
+    position: absolute; /* এটি যোগ করুন */
+    top: 0; 
+    width: 100%; 
+    z-index: 2000; /* মেনু যেন সবকিছুর উপরে থাকে */
+        }
 
         /* কন্টেন্ট */
         .container { padding: 40px 5%; }
