@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex Tier</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #050508; color: #ffffff; min-height: 100vh; }
-body {
+        body {
     background-image: url('https://i0.wp.com/highschool.latimes.com/wp-content/uploads/2021/07/minecraft.jpeg?fit=1920%2C1080&ssl=1');
     background-size: cover;
     background-position: center;
@@ -429,64 +427,484 @@ header {
                 transform: translateX(50%);
             }
             }
-        /* ল্যান্ডিং পেজ স্টাইল */
+        /* আপনার আগের সব CSS এখানে ঠিক থাকবে, শুধু এই নতুন অংশগুলো খেয়াল করুন */
+        
+        /* ল্যান্ডিং পেজ ডিজাইন */
         #landing-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, #1e1e3f 0%, #050508 70%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             padding: 50px;
-            height: 100vh;
-            background: radial-gradient(circle at 70% 30%, #1e1e3f 0%, #050508 70%);
+            z-index: 1000;
         }
-        .badge { background: #1a202c; color: #6366f1; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 20px; border: 1px solid #312e81; }
-        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
-        .highlight { color: #f59e0b; }
-        p { color: #94a3b8; max-width: 500px; margin-bottom: 30px; }
-        .btn-group { display: flex; gap: 15px; }
-        .btn-tier { background: #6366f1; color: white; padding: 12px 25px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
-        .btn-discord { background: #1f2937; color: white; padding: 12px 25px; border-radius: 8px; border: none; cursor: pointer; }
+        
+        /* মেইন কন্টেন্ট শুরুতে লুকিয়ে রাখা */
+        #main-content {
+            display: none;
+        }
 
-        /* মেইন কন্টেন্ট */
-        #main-content { display: none; padding: 20px; }
-        nav { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; border-bottom: 1px solid #1f2937; }
-        .nav-links { display: flex; gap: 20px; color: #94a3b8; }
+        /* আপনার আগের CSS কোডগুলো এখানে বসিয়ে দিন (যা আপনি হেডারে লিখেছিলেন) */
+        body { background-color: #050508; color: #ffffff; }
     </style>
 </head>
 <body>
 
-<!-- ল্যান্ডিং পেজ -->
+<!-- ল্যান্ডিং পেজ: এটি সবার আগে দেখাবে -->
 <div id="landing-page">
     <div class="badge">● Season 1 Active ● LIVE</div>
-    <h1>The <span class="highlight">#1 Cracked</span><br>& Premium Tierlist</h1>
-    <p>Vortex Tier is the best Minecraft PvP tier testing server with skilled testers, active leaderboards, fair rankings, and competitive gameplay.</p>
+    <h1 style="font-size: 4rem; margin-bottom: 20px;">The <span style="color: #f59e0b;">#1 Cracked</span><br>& Premium Tierlist</h1>
+    <p style="color: #94a3b8; margin-bottom: 30px;">Vortex Tier is the best Minecraft PvP tier testing server.</p>
     <div class="btn-group">
-        <button class="btn-tier" onclick="showWebsite()">⚡ View Tier List</button>
-        <button class="btn-discord" onclick="window.open('https://discord.gg/CNnWfV99m8')">Join Discord</button>
+        <button onclick="showWebsite()" style="padding: 12px 25px; background: #6366f1; color: white; border: none; border-radius: 8px; cursor: pointer;">⚡ View Tier List</button>
     </div>
 </div>
 
-<!-- মূল ওয়েবসাইট কন্টেন্ট -->
+<!-- মেইন ওয়েবসাইট: এটি আগে লুকানো থাকবে -->
 <div id="main-content">
-    <nav>
-        <h3>Vortex Tier</h3>
-        <div class="nav-links">
-            <span>Home</span>
-            <span>Ranking</span>
-            <span>Discord</span>
+    <header>
+        <!-- আপনার আগের হেডার কোড এখানে থাকবে -->
+        <h1>Vortex Tier</h1>
+        <div class="ip-text"> </div>
+    </div>
+    
+    <div class="header-actions">
+        <a href="https://discord.gg/CNnWfV99m8" target="_blank" class="discord-btn">
+            💬 Discord
+        </a>
+        <div class="search-container">
+            <input type="text" id="tierSearch" class="search-input" placeholder="Search player..." onkeyup="liveSearch()">
         </div>
-        <button class="btn-tier" style="padding: 5px 15px;">Discord</button>
-    </nav>
-    <div style="padding: 50px;">
-        <!-- এখানে আপনার আগের টেবিল কোডটি বসিয়ে দিন -->
+    </div>
+    </header>
+
+    <div class="nav-container">
+        <!-- আপনার আগের নভিগেশন -->
+        <button class="nav-btn active" onclick="openPage('overall')"><img src="https://i.postimg.cc/LXYH1wdr/lv-0-20260609200956.png" class="nav-icon"> Overall</button>
+    </div>
+
+    <div id="overall" class="page-section active">
+        <!-- আপনার আগের টেবিল কোডটি এখানে থাকবে -->
+        <table class="overall-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Game Modes & Tiers</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+
+                    
+                </tr>
+            <tr class="player-row-item">
+    <td class="rank-col">1.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">normie_insaan</span>
+                <span class="rank-desc">Combat Master (36 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            
+            </div>
+    </td>
+            </tr>
+            <tr class="player-row-item">
+    <td class="rank-col">2.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">StrikeFlax</span>
+                <span class="rank-desc">Combat Master (32 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+                        <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+
+            </div>
+            
+            </div>
+    </td>
+</tr>
+               <tr class="player-row-item">
+    <td class="rank-col">3.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">SynThexOP</span>
+                <span class="rank-desc">Combat Master (23 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+                        <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            
+            </div>
+    </td>
+               </tr>
+           <tr class="player-row-item">
+    <td class="rank-col">4.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">DIZZ69</span>
+                <span class="rank-desc">Combat Master (16 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+                        <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+
+            </div>
+            
+            </div>
+    </td>
+           </tr>
+       <tr class="player-row-item">
+    <td class="rank-col">5.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">zombiefff</span>
+                <span class="rank-desc">Combat Master (14 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT4</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            
+            </div>
+    </td>
+      </tr>
+    <tr class="player-row-item">
+    <td class="rank-col">6.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">ByteNYB</span>
+                <span class="rank-desc">Combat Master (9 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+                        <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">HT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+
+            </div>
+            
+            </div>
+    </td>
+</tr>
+               <tr class="player-row-item">
+    <td class="rank-col">7.</td>
+    <td>
+        <div class="player-container">
+            <img src="https://render.crafty.gg/3d/bust/4bb70487-9146-4fc7-89ec-971808e414b9" class="player-skin-full" alt="skin">
+            <div class="player-details">
+                <span class="player-name">PriyanshuOG</span>
+                <span class="rank-desc">Combat Master (1 points)</span>
+            </div>
+            <span class="region-badge"AS</span>
+        </div>
+    </td>
+    <td>
+        <div class="tiers-container">
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qM3XBvN6/nethop.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/xdK4XPqk/axe.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+                    <div class="tier-item">
+                        <img src="https://i.postimg.cc/zD9KQY0P/uhc.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+                        </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/cL1RRMDy/smp.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/nLYDjsJS/638965736295609752.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">LT5</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/qB8vkfpb/sword.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/sXG1PvdS/pot.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3x6kkgVP/mace.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            <div class="tier-item">
+                <img src="https://i.postimg.cc/3NgqvCtt/ironpot-cd3b39ed.png" class="tier-icon">
+                <span class="tier-label" style="color: #f08a24;">?</span>
+            </div>
+            
+            </div>
+    </td>
+               </tr>
+                
+                
+            </tbody>
+                            </table>
     </div>
 </div>
 
 <script>
+    // এই ফাংশনটি ল্যান্ডিং পেজ হাইড করবে এবং মেইন কন্টেন্ট দেখাবে
     function showWebsite() {
         document.getElementById('landing-page').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
     }
+
+    // আপনার আগের সব স্ক্রিপ্ট ফাংশন নিচে এখানে রাখুন
+    function openPage(pageId) { /* ... */ }
+    function liveSearch() { /* ... */ }
 </script>
 
 </body>
