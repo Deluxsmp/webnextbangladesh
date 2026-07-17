@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vortex Tier</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+          * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #0b0e14; color: #fff; }
 
+        /* Navigation */
         nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px 5%; 
-    background: #161b22; 
-    position: absolute; /* এটি যোগ করুন */
-    top: 0; 
-    width: 100%; 
-    z-index: 2000; /* মেনু যেন সবকিছুর উপরে থাকে */
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 5%; background: #161b22; width: 100%;
         }
+        nav a { color: #fff; text-decoration: none; margin-left: 20px; cursor: pointer; }
 
         /* কন্টেন্ট */
         .container { padding: 40px 5%; }
@@ -281,13 +276,13 @@
     </style>
 </head>
 <body>
-    <nav>
-    <div class="logo"><h2>Vortex Tier</h2></div>
-    <div class="menu">
-        <a href="#">Home</a>
-        <a href="#">Ranking</a>
-        <a href="#" class="discord-btn">Discord</a>
-    </div>
+<nav>
+        <div class="logo"><h2>Vortex Tier</h2></div>
+        <div class="menu">
+            <a onclick="showSection('landing-page')">Home</a>
+            <a onclick="showSection('main-content')">Ranking</a>
+            <a href="https://discord.gg/CNnWfV99m8">Discord</a>
+        </div>
     </nav>
 
 <!-- ল্যান্ডিং পেজ -->
@@ -709,7 +704,10 @@
     function showWebsite() {
         document.getElementById('landing-page').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
+        document.getElementById(sectionId).style.display = (sectionId === 'landing-page') ? 'flex' : 'block';
+         = 'column';
     }
+    
 
     function liveSearch() {
         var input = document.getElementById('tierSearch').value.toUpperCase();
@@ -717,6 +715,8 @@
         for (var i = 0; i < rows.length; i++) {
             var name = rows[i].getElementsByClassName('player-name')[0].innerText;
             rows[i].style.display = name.toUpperCase().indexOf(input) > -1 ? "" : "none";
+            if(sectionId === 'landing-page') {
+                document.getElementById('landing-page').style.flexDirection
         }
     }
 </script>
