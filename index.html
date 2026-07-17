@@ -7,7 +7,428 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #050508; color: #ffffff; min-height: 100vh; }
+body {
+    background-image: url('https://i0.wp.com/highschool.latimes.com/wp-content/uploads/2021/07/minecraft.jpeg?fit=1920%2C1080&ssl=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #c9d1d9;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
 
+/* ব্যাকগ্রাউন্ড কিছুটা অন্ধকার রাখার জন্য একটি ওভারলে */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 14, 20, 0.85); /* ৮৫% ডার্ক ওভারলে */
+    z-index: -1;
+}
+
+/* এই অংশটি ২৬ থেকে ৩৬ নম্বর লাইন পর্যন্ত রিপ্লেস করুন */
+header {
+    width: 100%;
+    background-color: rgba(22, 27, 34, 0.9); /* হালকা ট্রান্সপারেন্ট */
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #f08a24;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+/* সার্চ এবং বাটনকে পাশাপাশি রাখার কন্টেইনার */
+.top-action-wrapper {
+    position: absolute;
+    top: 25px; /* আপনার হেডারের সাথে মিলিয়ে নেবেন */
+    right: 20px;
+    display: flex;
+    align-items: center; /* বাটন ও ইনপুটকে একই লাইনে রাখবে */
+    gap: 15px; /* দুটির মাঝখানে কিছুটা ফাঁকা জায়গা */
+}
+
+/* ডিসকর্ড বাটনের ডিজাইন */
+.discord-btn {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.discord-btn:hover {
+    border-color: #f08a24;
+    color: #f0f6fc;
+}
+
+/* সার্চ কন্টেইনারের সাইজ ঠিক রাখা */
+.search-container {
+    width: 250px; /* আপনার পছন্দমতো সাইজ */
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+        /* নেভিগেশন বাটন গ্রুপ */
+        .nav-container {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 25px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .nav-container::-webkit-scrollbar {
+            height: 4px;
+        }
+        .nav-container::-webkit-scrollbar-thumb {
+            background-color: #30363d;
+            border-radius: 10px;
+        }
+
+        .nav-btn {
+            background-color: transparent;
+            color: #8b949e;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* বাটন হোভার স্টাইল */
+.nav-btn:hover {
+    
+    color: #f0f6fc;
+    transform: translateY(-2px);
+    
+}
+
+/* বাটন এক্টিভ স্টাইল (এখানেই পরিবর্তন করা হয়েছে) */
+/* বাটন এক্টিভ স্টাইল */
+.nav-btn.active {
+    background-color: transparent;
+    color: #ffffff !important;                
+    border: none !important;                  
+    border-bottom: 2px solid #ffffff !important; /* এখানে #ffffff এর বদলে #f08a24 দিলে হলুদ হবে */
+    border-radius: 0 !important;    
+    transition: border-bottom 0.3s ease;
+}
+
+        /* কমন কন্টেন্ট হোল্ডার */
+        .page-section {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+    /* OVERALL RANKINGS (টেবিল ভিউ) */
+        .overall-table {
+            width: 100%;
+            background-color: #161b22;
+            border-radius: 8px;
+            border: 1px solid #21262d;
+            border-collapse: collapse;
+        }
+
+        .overall-table th, .overall-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #21262d;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .overall-table th {
+            background-color: #0d1117;
+            color: #8b949e;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .rank-col {
+            font-weight: bold;
+            font-style: italic;
+            width: 40px;
+        }
+        tr:nth-child(1) .rank-col { color: #d4af37; }
+        tr:nth-child(2) .rank-col { color: #c0c0c0; }
+        tr:nth-child(3) .rank-col { color: #cd7f32; }
+
+/* নতুন প্লেয়ার স্টাইল */
+.player-container { display: flex; align-items: center; gap: 12px; }
+.player-skin { width: 45px; height: 45px; border-radius: 6px; object-fit: cover; border: 2px solid #30363d; }
+.player-details { display: flex; flex-direction: column; }
+.player-name { font-weight: bold; color: #f0f6fc; font-size: 1rem; }
+.rank-desc { font-size: 0.8rem; color: #8b949e; }
+
+/* স্কিন কনটেইনার */
+.skin-wrapper {
+    position: relative;
+    width: 42px; /* ৪৪ পিক্সেল করে দিলাম ২ পিক্সেল বাড়তি জায়গা রাখার জন্য */
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+/* ধূসর রঙের ব্যাকগ্রাউন্ড */
+.skin-bg {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background-color: #2f363d;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+/* স্কিনের সাইজ */
+.player-skin-full {
+    width: 41px; /* স্কিনকে ৪০ পিক্সেল রাখা হয়েছে যাতে চারপাশে ২ পিক্সেলের গ্যাপ থাকে */
+    height: auto;
+    z-index: 2;
+    position: relative;
+    object-fit: contain;
+}
+
+ 
+/* প্লেয়ার এবং রিজিয়ন ব্যাজকে পাশাপাশি রাখার জন্য */
+.player-row-item .player-container { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+/* রিজিয়ন ব্যাজের স্টাইল */
+.region-badge { 
+    background: #3d2626; 
+    color: #ff8888; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-size: 0.70rem; 
+    font-weight: bold; 
+    border: 1px solid #5a3a3a;
+    margin-left: 20px; /* নামের সাথে দূরত্ব */
+}
+
+/* টিয়ার সেকশনের জন্য নতুন স্টাইল */
+.tiers-container { display: flex; gap: 8px; align-items: center;  }
+.tier-item { display: flex; flex-direction: column; align-items: center; gap: 2px;  }
+.tier-icon { width: 22px; height: 22px; object-fit: contain; }
+.tier-label { font-size: 0.7rem; font-weight: bold; }
+        
+        .player-head {
+            width: 24px;
+            height: 24px;
+            background-color: #30363d;
+            border: 2px solid #444c56;
+            border-radius: 4px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .player-head::before, .player-head::after {
+            content: ''; position: absolute; width: 4px; height: 4px;
+            background-color: #0d1117; top: 6px;
+        }
+        .player-head::before { left: 4px; }
+        .player-head::after { right: 4px; }
+
+        .player-name {
+            font-weight: 600;
+            color: #f0f6fc;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .mode-badge-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .mode-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #21262d;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: 1px solid #30363d;
+        }
+
+        .nav-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+        }
+
+        /* MCTIERS এর মতো পাশাপাশি (Horizontal) গ্রিড লেআউট */
+        .tier-grid-container {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            width: 100%;
+            overflow-x: auto;
+            padding-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        /* স্ক্রোলবার স্টাইল */
+        .tier-grid-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .tier-grid-container::-webkit-scrollbar-track {
+            background: #0d1117;
+            border-radius: 10px;
+        }
+        .tier-grid-container::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 10px;
+        }
+        .tier-grid-container::-webkit-scrollbar-thumb:hover {
+            background: #f08a24;
+        }
+
+        
+       .tier-box {
+            min-width: 230px;
+            flex: 1;
+            background-color: #161b22;
+            border-radius: 6px;
+            border: 1px solid #21262d;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+
+        .tier-title {
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .t1-title { background: linear-gradient(135deg, #e5ad24, #b8840c); color: #000; }
+        .t2-title { background: linear-gradient(135deg, #b0bec5, #607d8b); color: #000; }
+        .t3-title { background: linear-gradient(135deg, #cd7f32, #8b4513); color: #fff; }
+        .t4-title { background: linear-gradient(135deg, #5b7065, #38423b); color: #fff; }
+        .t5-title { background: linear-gradient(135deg, #a13d3d, #5a1e1e); color: #fff; }
+
+        .tier-players-list {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-height: 650px;
+            overflow-y: auto;
+        }
+
+        .tier-players-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .tier-players-list::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+
+        .tier-player-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1f242c;
+            padding: 8px 10px;
+            border-radius: 4px;
+            border: 1px solid #282e38;
+        }
+
+        .tier-player-item:hover {
+            background-color: #262c36;
+            border-color: #384150;
+        }
+
+        .up-arrow {
+            color: #58a6ff;
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+        /* পেজ পরিবর্তনের এনিমেশন */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-section.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+        @media (max-width: 650px) {
+            header {
+                padding-top: 65px;
+            }
+            .discord-btn {
+                top: 10px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            }
         /* ল্যান্ডিং পেজ স্টাইল */
         #landing-page {
             display: flex;
