@@ -76,16 +76,18 @@
     <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-pink-500 flex items-center justify-center shadow-lg shadow-violet-500/30">
-                    <i class="fa-solid fa-cube text-white text-xl"></i>
+                <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-violet-500/30 border border-violet-500/30 flex items-center justify-center">
+                    <img src="clip_image_314568450642143629.jpg" alt="ZenFunMC Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-violet-200 to-violet-400 bg-clip-text text-transparent">ZenFun<span class="text-violet-500">MC</span></span>
             </div>
             
             <div class="hidden md:flex items-center space-x-8 font-medium">
                 <a href="#home" class="hover:text-violet-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-violet-400 transition-colors">About Us</a>
                 <a href="#stats" class="hover:text-violet-400 transition-colors">Stats</a>
                 <a href="#shop" class="hover:text-violet-400 transition-colors">Rank Shop</a>
+                <a href="#rules" class="hover:text-violet-400 transition-colors">Rules</a>
                 <a href="#voting" class="hover:text-violet-400 transition-colors">Vote</a>
             </div>
 
@@ -128,6 +130,41 @@
                 </div>
             </div>
             <p id="copy-feedback" class="text-xs text-emerald-400 mt-2 h-4 font-medium transition-all opacity-0">IP copied to clipboard!</p>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-24 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-violet-500/10 text-violet-400 border border-violet-500/20">WHO WE ARE</span>
+                <h2 class="text-3xl md:text-5xl font-black mt-4 mb-6">The Ultimate Minecraft Community</h2>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                    Welcome to <strong class="text-white">ZenFunMC</strong>, a premier Minecraft server dedicated to delivering an unparalleled survival and crossplay gaming experience. Founded with a passion for gaming and community building, our mission is to provide a lag-free, secure, and deeply engaging environment for both Java and Bedrock players.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-panel p-4 rounded-2xl">
+                        <i class="fa-solid fa-bolt text-violet-400 text-xl mb-2"></i>
+                        <h4 class="font-bold text-white">20 TPS Gameplay</h4>
+                        <p class="text-xs text-gray-400">Optimized hardware for smooth gaming.</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-2xl">
+                        <i class="fa-solid fa-shield-halved text-pink-400 text-xl mb-2"></i>
+                        <h4 class="font-bold text-white">Anti-Cheat Protected</h4>
+                        <p class="text-xs text-gray-400">Fair play guaranteed for everyone.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-panel p-8 rounded-3xl border border-violet-500/20 relative overflow-hidden" data-aos="fade-left">
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-violet-600/20 rounded-full blur-3xl"></div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Why Choose ZenFunMC?</h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400"></i> <span>Custom Enchants & Unique Weapons</span></li>
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400"></i> <span>Dynamic Economy & Auction House</span></li>
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400"></i> <span>Advanced Land Claims & Protection</span></li>
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400"></i> <span>Active Staff & Friendly Community</span></li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -283,6 +320,53 @@
         </div>
     </section>
 
+    <!-- RULES SECTION -->
+    <section id="rules" class="py-24 relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider bg-pink-500/10 text-pink-400 border border-pink-500/20">GUIDELINES</span>
+            <h2 class="text-3xl md:text-5xl font-black mt-4 mb-4">Server Rules</h2>
+            <p class="text-gray-400 max-w-xl mx-auto">Please follow these rules to keep the server fun, fair, and safe for everyone.</p>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up">
+            <div class="glass-panel p-6 rounded-2xl flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div>
+                    <h4 class="font-bold text-white text-lg">No Hacking, Cheats, or Exploits</h4>
+                    <p class="text-sm text-gray-400">Using hacked clients, X-Ray packs, auto-clickers, or exploiting bugs/glitches will result in a permanent ban. Report bugs to staff instead!</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div>
+                    <h4 class="font-bold text-white text-lg">Respect All Players</h4>
+                    <p class="text-sm text-gray-400">No racism, sexism, harassment, toxic behavior, or excessive swearing. Keep the chat friendly and clean.</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div>
+                    <h4 class="font-bold text-white text-lg">No Unauthorized Advertising</h4>
+                    <p class="text-sm text-gray-400">Promoting other servers, Discords, or external links without staff permission is strictly prohibited.</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold flex-shrink-0">4</div>
+                <div>
+                    <h4 class="font-bold text-white text-lg">Protect Personal Privacy</h4>
+                    <p class="text-sm text-gray-400">Do not share sensitive personal information (phone numbers, real-life pictures, etc.) of yourself or others.</p>
+                </div>
+            </div>
+            <div class="glass-panel p-6 rounded-2xl flex items-start space-x-4">
+                <div class="w-8 h-8 rounded-lg bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold flex-shrink-0">5</div>
+                <div>
+                    <h4 class="font-bold text-white text-lg">Staff Authority</h4>
+                    <p class="text-sm text-gray-400">Moderator and Admin decisions are final. Respect staff instructions and do not argue about timeouts or punishments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- VOTING SECTION -->
     <section id="voting" class="py-24 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up">
@@ -327,8 +411,8 @@
     <footer class="border-t border-white/10 py-12 relative z-10 glass-panel mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-violet-600 to-pink-500 flex items-center justify-center">
-                    <i class="fa-solid fa-cube text-white text-sm"></i>
+                <div class="w-8 h-8 rounded-lg overflow-hidden border border-violet-500/30 flex items-center justify-center">
+                    <img src="clip_image_314568450642143629.jpg" alt="ZenFunMC Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-xl font-bold text-white">ZenFunMC</span>
             </div>
