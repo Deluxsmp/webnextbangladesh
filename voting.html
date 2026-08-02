@@ -14,6 +14,12 @@
             color: #f3f4f6; 
             overflow-x: hidden; 
             font-family: 'Outfit', sans-serif; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
         }
         .glass-panel { 
             background: rgba(17, 24, 39, 0.75); 
@@ -71,69 +77,72 @@
         </div>
     </nav>
 
-    <!-- Hero / Voting Section -->
-    <section class="py-36 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12" data-aos="fade-up">
-            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider bg-violet-500/10 text-violet-400 border border-violet-500/20 mb-4">
-                <i class="fa-solid fa-gift animate-bounce"></i>
-                <span>SUPPORT & EARN REWARDS</span>
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        <!-- Hero / Voting Section -->
+        <section class="py-36 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider bg-violet-500/10 text-violet-400 border border-violet-500/20 mb-4">
+                    <i class="fa-solid fa-gift animate-bounce"></i>
+                    <span>SUPPORT & EARN REWARDS</span>
+                </div>
+                <h2 class="text-4xl md:text-6xl font-black mt-2 mb-4 tracking-tight">Vote For <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">ZenFunMC</span></h2>
+                <p class="text-gray-400 max-w-lg mx-auto text-base md:text-lg">Vote daily on our official server list to unlock exclusive in-game keys, rare items, and valuable money rewards!</p>
             </div>
-            <h2 class="text-4xl md:text-6xl font-black mt-2 mb-4 tracking-tight">Vote For <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">ZenFunMC</span></h2>
-            <p class="text-gray-400 max-w-lg mx-auto text-base md:text-lg">Vote daily on our official server list to unlock exclusive in-game keys, rare items, and valuable money rewards!</p>
-        </div>
 
-        <!-- Reward Perks Preview Banner -->
-        <div class="glass-panel p-6 rounded-3xl mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-key"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-sm font-bold text-white">Vote Keys</div>
-                    <div class="text-xs text-gray-400">Get free crate keys</div>
-                </div>
-            </div>
-            <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-coins"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-sm font-bold text-white">In-Game Money</div>
-                    <div class="text-xs text-gray-400">Boost your balance</div>
-                </div>
-            </div>
-            <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
-                    <i class="fa-solid fa-trophy"></i>
-                </div>
-                <div class="text-left">
-                    <div class="text-sm font-bold text-white">Monthly Rank Draw</div>
-                    <div class="text-xs text-gray-400">Chance to win VIP ranks</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Single Centered Voting Button/Card -->
-        <div class="flex justify-center" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://minecraft-server-list.com" target="_blank" class="glass-panel p-8 rounded-3xl w-full max-w-xl flex items-center justify-between glass-panel-hover custom-transition group relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-violet-500/10 rounded-full blur-3xl group-hover:bg-violet-500/25 custom-transition"></div>
-                <div>
-                    <div class="flex items-center space-x-2 mb-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span class="text-xs font-bold text-violet-400 tracking-wider">OFFICIAL VOTE LINK</span>
+            <!-- Reward Perks Preview Banner -->
+            <div class="glass-panel p-6 rounded-3xl mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-key"></i>
                     </div>
-                    <div class="text-2xl font-bold text-white group-hover:text-violet-300 custom-transition">Minecraft-Server-List</div>
-                    <div class="text-sm text-gray-400 mt-1">Reward: 1x Vote Key + $5,000 In-Game Money</div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white">Vote Keys</div>
+                        <div class="text-xs text-gray-400">Get free crate keys</div>
+                    </div>
                 </div>
-                <div class="w-16 h-16 rounded-2xl bg-violet-600 group-hover:bg-violet-500 flex items-center justify-center custom-transition shadow-lg shadow-violet-600/40 border border-violet-400/30 shrink-0 ml-4">
-                    <i class="fa-solid fa-arrow-up-right-from-square text-white text-xl custom-transition group-hover:scale-110"></i>
+                <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white">In-Game Money</div>
+                        <div class="text-xs text-gray-400">Boost your balance</div>
+                    </div>
                 </div>
-            </a>
-        </div>
-    </section>
+                <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-sm font-bold text-white">Monthly Rank Draw</div>
+                        <div class="text-xs text-gray-400">Chance to win VIP ranks</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Centered Voting Button/Card -->
+            <div class="flex justify-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://minecraft-server-list.com" target="_blank" class="glass-panel p-8 rounded-3xl w-full max-w-xl flex items-center justify-between glass-panel-hover custom-transition group relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-violet-500/10 rounded-full blur-3xl group-hover:bg-violet-500/25 custom-transition"></div>
+                    <div>
+                        <div class="flex items-center space-x-2 mb-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-xs font-bold text-violet-400 tracking-wider">OFFICIAL VOTE LINK</span>
+                        </div>
+                        <div class="text-2xl font-bold text-white group-hover:text-violet-300 custom-transition">Minecraft-Server-List</div>
+                        <div class="text-sm text-gray-400 mt-1">Reward: 1x Vote Key + $5,000 In-Game Money</div>
+                    </div>
+                    <div class="w-16 h-16 rounded-2xl bg-violet-600 group-hover:bg-violet-500 flex items-center justify-center custom-transition shadow-lg shadow-violet-600/40 border border-violet-400/30 shrink-0 ml-4">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-white text-xl custom-transition group-hover:scale-110"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 py-12 relative z-10 glass-panel mt-16">
+    <footer class="border-t border-white/10 py-12 relative z-10 glass-panel">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-3">
                 <div class="w-9 h-9 rounded-xl overflow-hidden border border-violet-500/30 flex items-center justify-center">
