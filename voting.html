@@ -9,18 +9,48 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #030712; color: #f3f4f6; overflow-x: hidden; font-family: 'Outfit', sans-serif; }
-        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
-        .glass-panel-hover:hover { border-color: rgba(139, 92, 246, 0.6); box-shadow: 0 0 35px rgba(139, 92, 246, 0.3); transform: translateY(-4px); }
-        .custom-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { 
+            background-color: #030712; 
+            color: #f3f4f6; 
+            overflow-x: hidden; 
+            font-family: 'Outfit', sans-serif; 
+        }
+        .glass-panel { 
+            background: rgba(17, 24, 39, 0.75); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); 
+        }
+        .glass-panel-hover:hover { 
+            border-color: rgba(139, 92, 246, 0.6); 
+            box-shadow: 0 0 40px rgba(139, 92, 246, 0.25); 
+            transform: translateY(-6px); 
+        }
+        .custom-transition { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .bg-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-gray-100 selection:bg-violet-500 selection:text-white">
+<body class="bg-slate-950 text-gray-100 selection:bg-violet-500 selection:text-white relative">
 
+    <!-- Background Decorative Glows -->
+    <div class="bg-glow top-20 left-10"></div>
+    <div class="bg-glow bottom-20 right-10"></div>
+
+    <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3 group">
-                <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-xl shadow-violet-500/20 border border-violet-500/40 flex items-center justify-center custom-transition group-hover:scale-105">
+                <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-xl shadow-violet-500/20 border border-violet-500/40 flex items-center justify-center custom-transition group-hover:scale-105 group-hover:rotate-3">
                     <img src="clip_image_314568450642143629.jpg" alt="Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-2xl font-black tracking-wider text-white">ZenFun<span class="text-violet-500">MC</span></span>
@@ -30,10 +60,10 @@
                 <a href="about.html" class="text-gray-300 hover:text-violet-400 custom-transition">About Us</a>
                 <a href="shop.html" class="text-gray-300 hover:text-violet-400 custom-transition">Rank Shop</a>
                 <a href="rules.html" class="text-gray-300 hover:text-violet-400 custom-transition">Rules</a>
-                <a href="voting.html" class="text-violet-400 font-bold transition-colors">Vote</a>
+                <a href="voting.html" class="text-violet-400 font-bold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-violet-500">Vote</a>
             </div>
             <div>
-                <a href="https://discord.gg/zenfunmc" target="_blank" class="px-6 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-white shadow-lg shadow-indigo-600/30 custom-transition flex items-center space-x-2">
+                <a href="https://discord.gg/zenfunmc" target="_blank" class="px-6 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-white shadow-lg shadow-indigo-600/30 custom-transition flex items-center space-x-2 hover:scale-105">
                     <i class="fa-brands fa-discord text-lg"></i>
                     <span>Discord</span>
                 </a>
@@ -41,44 +71,68 @@
         </div>
     </nav>
 
-    <section class="py-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider bg-violet-500/10 text-violet-400 border border-violet-500/20">SUPPORT</span>
-            <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4">Vote For Rewards</h2>
-            <p class="text-gray-400 max-w-xl mx-auto text-base">Vote for ZenFunMC on multiple sites daily to claim free in-game keys, items, and money!</p>
+    <!-- Hero / Voting Section -->
+    <section class="py-36 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider bg-violet-500/10 text-violet-400 border border-violet-500/20 mb-4">
+                <i class="fa-solid fa-gift animate-bounce"></i>
+                <span>SUPPORT & EARN REWARDS</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-black mt-2 mb-4 tracking-tight">Vote For <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">ZenFunMC</span></h2>
+            <p class="text-gray-400 max-w-lg mx-auto text-base md:text-lg">Vote daily on our official server list to unlock exclusive in-game keys, rare items, and valuable money rewards!</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up">
-            <a href="https://minecraft-server-list.com" target="_blank" class="glass-panel p-6 rounded-3xl flex items-center justify-between glass-panel-hover custom-transition group">
+        <!-- Reward Perks Preview Banner -->
+        <div class="glass-panel p-6 rounded-3xl mb-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-white">Vote Keys</div>
+                    <div class="text-xs text-gray-400">Get free crate keys</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-white">In-Game Money</div>
+                    <div class="text-xs text-gray-400">Boost your balance</div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <div class="text-left">
+                    <div class="text-sm font-bold text-white">Monthly Rank Draw</div>
+                    <div class="text-xs text-gray-400">Chance to win VIP ranks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Centered Voting Button/Card -->
+        <div class="flex justify-center" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://minecraft-server-list.com" target="_blank" class="glass-panel p-8 rounded-3xl w-full max-w-xl flex items-center justify-between glass-panel-hover custom-transition group relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-violet-500/10 rounded-full blur-3xl group-hover:bg-violet-500/25 custom-transition"></div>
                 <div>
-                    <div class="text-xs font-bold text-violet-400 mb-1 tracking-wider">VOTE SITE #1</div>
-                    <div class="text-lg font-bold text-white">Minecraft-Server-List</div>
+                    <div class="flex items-center space-x-2 mb-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span class="text-xs font-bold text-violet-400 tracking-wider">OFFICIAL VOTE LINK</span>
+                    </div>
+                    <div class="text-2xl font-bold text-white group-hover:text-violet-300 custom-transition">Minecraft-Server-List</div>
+                    <div class="text-sm text-gray-400 mt-1">Reward: 1x Vote Key + $5,000 In-Game Money</div>
                 </div>
-                <div class="w-11 h-11 rounded-2xl bg-white/5 group-hover:bg-violet-600 flex items-center justify-center custom-transition shadow-inner">
-                    <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-white custom-transition"></i>
-                </div>
-            </a>
-            <a href="https://planetminecraft.com" target="_blank" class="glass-panel p-6 rounded-3xl flex items-center justify-between glass-panel-hover custom-transition group">
-                <div>
-                    <div class="text-xs font-bold text-violet-400 mb-1 tracking-wider">VOTE SITE #2</div>
-                    <div class="text-lg font-bold text-white">Planet Minecraft</div>
-                </div>
-                <div class="w-11 h-11 rounded-2xl bg-white/5 group-hover:bg-violet-600 flex items-center justify-center custom-transition shadow-inner">
-                    <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-white custom-transition"></i>
-                </div>
-            </a>
-            <a href="https://topg.org" target="_blank" class="glass-panel p-6 rounded-3xl flex items-center justify-between glass-panel-hover custom-transition group">
-                <div>
-                    <div class="text-xs font-bold text-violet-400 mb-1 tracking-wider">VOTE SITE #3</div>
-                    <div class="text-lg font-bold text-white">TopG Minecraft</div>
-                </div>
-                <div class="w-11 h-11 rounded-2xl bg-white/5 group-hover:bg-violet-600 flex items-center justify-center custom-transition shadow-inner">
-                    <i class="fa-solid fa-arrow-up-right-from-square text-gray-400 group-hover:text-white custom-transition"></i>
+                <div class="w-16 h-16 rounded-2xl bg-violet-600 group-hover:bg-violet-500 flex items-center justify-center custom-transition shadow-lg shadow-violet-600/40 border border-violet-400/30 shrink-0 ml-4">
+                    <i class="fa-solid fa-arrow-up-right-from-square text-white text-xl custom-transition group-hover:scale-110"></i>
                 </div>
             </a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="border-t border-white/10 py-12 relative z-10 glass-panel mt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-3">
@@ -89,12 +143,19 @@
             </div>
             <p class="text-sm text-gray-400 text-center">&copy; 2026 ZenFunMC. Not an official Minecraft product.</p>
             <div class="flex items-center space-x-4">
-                <a href="https://discord.gg/zenfunmc" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-indigo-600 flex items-center justify-center custom-transition text-gray-300 hover:text-white"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://discord.gg/zenfunmc" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-indigo-600 flex items-center justify-center custom-transition text-gray-300 hover:text-white shadow-md"><i class="fa-brands fa-discord"></i></a>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script>
+        AOS.init({ 
+            duration: 800, 
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 </html>
