@@ -9,14 +9,42 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #030712; color: #f3f4f6; overflow-x: hidden; font-family: 'Outfit', sans-serif; }
-        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
-        .glass-panel-hover:hover { border-color: rgba(236, 72, 153, 0.5); box-shadow: 0 0 30px rgba(236, 72, 153, 0.2); transform: translateX(6px); }
-        .custom-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { 
+            background-color: #030712; 
+            color: #f3f4f6; 
+            overflow-x: hidden; 
+            font-family: 'Outfit', sans-serif; 
+        }
+        .glass-panel { 
+            background: rgba(17, 24, 39, 0.75); 
+            backdrop-filter: blur(24px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); 
+        }
+        .glass-panel-hover:hover { 
+            border-color: rgba(139, 92, 246, 0.5); 
+            box-shadow: 0 0 35px rgba(139, 92, 246, 0.25); 
+            transform: translateY(-4px); 
+        }
+        .custom-transition { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .bg-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-gray-100 selection:bg-violet-500 selection:text-white">
+<body class="bg-slate-950 text-gray-100 selection:bg-violet-500 selection:text-white relative">
 
+    <!-- Background Decorative Glows -->
+    <div class="bg-glow top-20 left-1/2 -translate-x-1/2"></div>
+
+    <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-3 group">
@@ -41,61 +69,77 @@
         </div>
     </nav>
 
-    <section class="py-32 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-wider bg-pink-500/10 text-pink-400 border border-pink-500/20">GUIDELINES</span>
-            <h2 class="text-4xl md:text-5xl font-black mt-4 mb-4">Server Rules</h2>
-            <p class="text-gray-400 max-w-xl mx-auto text-base">Please follow these rules to keep the server fun, fair, and safe for everyone.</p>
+    <!-- Main Content Section (Centered Perfectly) -->
+    <section class="py-36 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
+        
+        <!-- Section Header -->
+        <div class="mb-16 w-full" data-aos="fade-up">
+            <span class="px-4 py-1.5 rounded-full text-xs font-bold tracking-widest bg-violet-500/10 text-violet-400 border border-violet-500/20 uppercase">Guidelines</span>
+            <h2 class="text-4xl md:text-6xl font-black mt-4 mb-4 tracking-tight">Server Rules</h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-base md:text-lg">Please follow these rules carefully to keep the server fun, fair, and safe for everyone.</p>
         </div>
 
-        <div class="space-y-5" data-aos="fade-up">
-            <div class="glass-panel p-6 md:p-8 rounded-3xl flex items-start space-x-5 glass-panel-hover custom-transition">
-                <div class="w-10 h-10 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black flex-shrink-0 border border-violet-500/30 shadow-md">1</div>
-                <div>
+        <!-- Rules List (Centered & Aligned) -->
+        <div class="space-y-6 w-full text-left" data-aos="fade-up">
+            
+            <!-- Rule 1 -->
+            <div class="glass-panel p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 glass-panel-hover custom-transition">
+                <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black text-lg flex-shrink-0 border border-violet-500/30 shadow-md">01</div>
+                <div class="text-center sm:text-left">
                     <h4 class="font-bold text-white text-lg md:text-xl mb-1">No Hacking, Cheats, or Exploits</h4>
                     <p class="text-sm md:text-base text-gray-400 leading-relaxed">Using hacked clients, X-Ray packs, auto-clickers, or exploiting bugs/glitches will result in a permanent ban. Report bugs to staff instead!</p>
                 </div>
             </div>
-            <div class="glass-panel p-6 md:p-8 rounded-3xl flex items-start space-x-5 glass-panel-hover custom-transition">
-                <div class="w-10 h-10 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black flex-shrink-0 border border-violet-500/30 shadow-md">2</div>
-                <div>
+
+            <!-- Rule 2 -->
+            <div class="glass-panel p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 glass-panel-hover custom-transition">
+                <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black text-lg flex-shrink-0 border border-violet-500/30 shadow-md">02</div>
+                <div class="text-center sm:text-left">
                     <h4 class="font-bold text-white text-lg md:text-xl mb-1">Respect All Players</h4>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">No racism, sexism, harassment, toxic behavior, or excessive swearing. Keep the chat friendly and clean.</p>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">No racism, sexism, harassment, toxic behavior, or excessive swearing. Keep the chat friendly and clean for everyone.</p>
                 </div>
             </div>
-            <div class="glass-panel p-6 md:p-8 rounded-3xl flex items-start space-x-5 glass-panel-hover custom-transition">
-                <div class="w-10 h-10 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black flex-shrink-0 border border-violet-500/30 shadow-md">3</div>
-                <div>
+
+            <!-- Rule 3 -->
+            <div class="glass-panel p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 glass-panel-hover custom-transition">
+                <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black text-lg flex-shrink-0 border border-violet-500/30 shadow-md">03</div>
+                <div class="text-center sm:text-left">
                     <h4 class="font-bold text-white text-lg md:text-xl mb-1">No Unauthorized Advertising</h4>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Promoting other servers, Discords, or external links without staff permission is strictly prohibited.</p>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Promoting other servers, Discords, or external links without direct staff permission is strictly prohibited.</p>
                 </div>
             </div>
-            <div class="glass-panel p-6 md:p-8 rounded-3xl flex items-start space-x-5 glass-panel-hover custom-transition">
-                <div class="w-10 h-10 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black flex-shrink-0 border border-violet-500/30 shadow-md">4</div>
-                <div>
+
+            <!-- Rule 4 -->
+            <div class="glass-panel p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 glass-panel-hover custom-transition">
+                <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black text-lg flex-shrink-0 border border-violet-500/30 shadow-md">04</div>
+                <div class="text-center sm:text-left">
                     <h4 class="font-bold text-white text-lg md:text-xl mb-1">Protect Personal Privacy</h4>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Do not share sensitive personal information (phone numbers, real-life pictures, etc.) of yourself or others.</p>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Do not share sensitive personal information (phone numbers, real-life pictures, addresses, etc.) of yourself or others.</p>
                 </div>
             </div>
-            <div class="glass-panel p-6 md:p-8 rounded-3xl flex items-start space-x-5 glass-panel-hover custom-transition">
-                <div class="w-10 h-10 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black flex-shrink-0 border border-violet-500/30 shadow-md">5</div>
-                <div>
+
+            <!-- Rule 5 -->
+            <div class="glass-panel p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 glass-panel-hover custom-transition">
+                <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-black text-lg flex-shrink-0 border border-violet-500/30 shadow-md">05</div>
+                <div class="text-center sm:text-left">
                     <h4 class="font-bold text-white text-lg md:text-xl mb-1">Staff Authority</h4>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Moderator and Admin decisions are final. Respect staff instructions and do not argue about timeouts or punishments.</p>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Moderator and Admin decisions are final. Respect staff instructions and do not argue about timeouts or punishments in public chat.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="border-t border-white/10 py-12 relative z-10 glass-panel mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div class="flex items-center space-x-3">
                 <div class="w-9 h-9 rounded-xl overflow-hidden border border-violet-500/30 flex items-center justify-center">
                     <img src="clip_image_314568450642143629.jpg" alt="Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-xl font-bold text-white">ZenFunMC</span>
             </div>
-            <p class="text-sm text-gray-400 text-center">&copy; 2026 ZenFunMC. Not an official Minecraft product.</p>
+            <p class="text-sm text-gray-400">&copy; 2026 ZenFunMC. Not an official Minecraft product.</p>
             <div class="flex items-center space-x-4">
                 <a href="https://discord.gg/zenfunmc" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-indigo-600 flex items-center justify-center custom-transition text-gray-300 hover:text-white"><i class="fa-brands fa-discord"></i></a>
             </div>
