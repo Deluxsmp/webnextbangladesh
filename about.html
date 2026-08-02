@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ZenFunMC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #030712; color: #f3f4f6; overflow-x: hidden; font-family: 'Outfit', sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        .custom-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100 selection:bg-violet-500 selection:text-white">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-xl shadow-violet-500/20 border border-violet-500/40 flex items-center justify-center custom-transition group-hover:scale-105">
+                    <img src="clip_image_314568450642143629.jpg" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-2xl font-black tracking-wider text-white">ZenFun<span class="text-violet-500">MC</span></span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="index.html" class="text-gray-300 hover:text-violet-400 custom-transition">Home</a>
+                <a href="about.html" class="text-violet-400 font-bold transition-colors">About Us</a>
+                <a href="shop.html" class="text-gray-300 hover:text-violet-400 custom-transition">Rank Shop</a>
+                <a href="rules.html" class="text-gray-300 hover:text-violet-400 custom-transition">Rules</a>
+                <a href="voting.html" class="text-gray-300 hover:text-violet-400 custom-transition">Vote</a>
+            </div>
+            <div>
+                <a href="https://discord.gg/zenfunmc" target="_blank" class="px-6 py-2.5 rounded-2xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-white shadow-lg shadow-indigo-600/30 custom-transition flex items-center space-x-2">
+                    <i class="fa-brands fa-discord text-lg"></i>
+                    <span>Discord</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider bg-violet-500/10 text-violet-400 border border-violet-500/20 shadow-sm">WHO WE ARE</span>
+                <h2 class="text-4xl md:text-5xl font-black mt-4 mb-6 leading-tight">The Ultimate Minecraft Community</h2>
+                <p class="text-gray-400 mb-8 leading-relaxed text-base md:text-lg">
+                    Welcome to <strong class="text-white">ZenFunMC</strong>, a premier Minecraft server dedicated to delivering an unparalleled survival and crossplay gaming experience. Founded with a passion for gaming and community building, our mission is to provide a lag-free, secure, and deeply engaging environment for both Java and Bedrock players.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-panel p-5 rounded-2xl border-l-4 border-violet-500">
+                        <i class="fa-solid fa-bolt text-violet-400 text-2xl mb-3"></i>
+                        <h4 class="font-bold text-white text-lg">20 TPS</h4>
+                        <p class="text-xs text-gray-400 mt-1">Optimized hardware for zero lag.</p>
+                    </div>
+                    <div class="glass-panel p-5 rounded-2xl border-l-4 border-pink-500">
+                        <i class="fa-solid fa-shield-halved text-pink-400 text-2xl mb-3"></i>
+                        <h4 class="font-bold text-white text-lg">Anti-Cheat</h4>
+                        <p class="text-xs text-gray-400 mt-1">Fair play guaranteed for all.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-panel p-8 md:p-10 rounded-3xl border border-violet-500/30 relative overflow-hidden shadow-2xl" data-aos="fade-left">
+                <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-violet-600/20 rounded-full blur-3xl pointer-events-none"></div>
+                <h3 class="text-2xl font-bold mb-6 text-white flex items-center space-x-3">
+                    <i class="fa-solid fa-star text-violet-400"></i>
+                    <span>Why Choose ZenFunMC?</span>
+                </h3>
+                <ul class="space-y-4 text-gray-300">
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400 text-lg"></i> <span>Custom Enchants & Unique Weapons</span></li>
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400 text-lg"></i> <span>Dynamic Economy & Auction House</span></li>
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400 text-lg"></i> <span>Advanced Land Claims & Protection</span></li>
+                    <li class="flex items-center space-x-3"><i class="fa-solid fa-check-circle text-violet-400 text-lg"></i> <span>Active Staff & Friendly Community</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-12 relative z-10 glass-panel mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl overflow-hidden border border-violet-500/30 flex items-center justify-center">
+                    <img src="clip_image_314568450642143629.jpg" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xl font-bold text-white">ZenFunMC</span>
+            </div>
+            <p class="text-sm text-gray-400 text-center">&copy; 2026 ZenFunMC. Not an official Minecraft product.</p>
+            <div class="flex items-center space-x-4">
+                <a href="https://discord.gg/zenfunmc" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-indigo-600 flex items-center justify-center custom-transition text-gray-300 hover:text-white"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
